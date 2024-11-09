@@ -54,14 +54,14 @@ nav {
   writing-mode: vertical-rl;
   max-height: 100svh;
   margin: 0;
-  padding: 1.3rem 0;
+  padding: 1rem 0;
   position: sticky;
   top: 0;
 }
 
 header h1 {
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 1rem;
 }
 
 nav {
@@ -127,13 +127,15 @@ section {
   figcaption {
     display: block;
     height: 0;
-    transform: translateY(-2rem);
+    padding: 0;
     font-size: 50%;
   }
 
   figcaption ul {
     display: flex;
-    justify-content: flex-end;
+    padding: 1rem;
+    transform: translateY(-100%);
+    align-items: flex-end;
     list-style: none;
     gap: 1rem;
   }
