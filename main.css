@@ -44,6 +44,7 @@ main>section:first-child {
 main>section:has(~ [id]:target) {
   flex-basis: 0%;
   max-height: none;
+  overflow: hidden;
 }
 
 
@@ -106,7 +107,7 @@ section {
 
 #works {
   flex-direction: column;
-  overflow: hidden;
+  justify-content: flex-start;
 
   figure {
     box-sizing: border-box;
@@ -124,6 +125,7 @@ section {
   }
 
   figcaption {
+    display: block;
     height: 0;
     transform: translateY(-2rem);
     font-size: 50%;
@@ -131,6 +133,7 @@ section {
 
   figcaption ul {
     display: flex;
+    justify-content: flex-end;
     list-style: none;
     gap: 1rem;
   }
