@@ -1,6 +1,6 @@
 ### Bio
 
-Vifei Gao is a painter and mixed media artist who was born in China and moved to
+Yifei Gao is a painter and mixed media artist who was born in China and moved to
 California when she was IS. Currently pursuing a Bachelor of Fine Arts at the School of the Art
 Institute of Chicago (SAIC) and granted the Merit Scholarship. She was in Artbash, School of
 the Art Institute of Chicago, 202G and Art for rich people to end global hunger, Valley Gallery,
@@ -25,10 +25,3 @@ emotions that may dissolve into nothingness. In my work, I strive to balance the
 visual beauty with the acknowledgment of its inherent fragility. Beauty can be compelling, but
 it can also be empty. This paradox is what drives me to create and what I find most compelling
 to express through my art.
-
-###  Programs
-`undated`
-* [Internship at Chelssea. NVC ART STUDIO](https://saic.joinhandshake.com/stu/jobs/9055031)
-* [Artist-Assistant Internshi](https://saic.joinhandshake.com/stu/jobs/89555827)
-* [Art and Culture Intern](https://saic.joinhandshake/stu/jobs/9146668)
-
