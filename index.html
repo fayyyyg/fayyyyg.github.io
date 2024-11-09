@@ -51,8 +51,8 @@
       const el = window[id].content.cloneNode(true)
       for (const key in data) {
         el.querySelectorAll(`[data-${key}]`).forEach(node => {
+          if (node.dataset[key] === 'innerHTML') return node[node.dataset[key]] = data[key]
           node.setAttribute(node.dataset[key], id + '/' + data[key])
-          console.log(node)
         })
       }
       return el
@@ -71,9 +71,19 @@
   <main>
     <section id="works">
       <template id="images">
-        <picture>
-          <img data-filename="src" loading="lazy" />
-        </picture>
+        <figure>
+          <picture>
+            <img data-filename="src" loading="lazy" />
+          </picture>
+          <figcaption>
+            <ul>
+              <li data-title="innerHTML"></li>
+              <li data-date="innerHTML"></li>
+              <li data-dimention="innerHTML"></li>
+              <li data-medium="innerHTML"></li>
+            </ul>
+          </figcaption>
+        </figure>
       </template>
     </section>
     <section id="about">
