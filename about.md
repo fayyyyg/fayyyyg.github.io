@@ -1,7 +1,7 @@
 ### Bio
 
-Yifei Gao is a painter and mixed media artist who was born in China and moved to
-California when she was IS. Currently pursuing a Bachelor of Fine Arts at the School of the Art
+Yifei Gao is a painter and mixed media artist who was grew up Hunan Changsha, China and later 
+California. Currently pursuing a Bachelor of Fine Arts at the School of the Art
 Institute of Chicago (SAIC) and granted the Merit Scholarship. She was in Artbash, School of
 the Art Institute of Chicago, 202G and Art for rich people to end global hunger, Valley Gallery,
 Chicago, 202G. Gao's approach emphasizes the technical aspects of art-making while
