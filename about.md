@@ -26,5 +26,6 @@ visual beauty with the acknowledgment of its inherent fragility. Beauty can be c
 it can also be empty. This paradox is what drives me to create and what I find most compelling
 to express through my art.
 
+### Links
 
 [instagram](https://www.instagram.com/fay_yifeigao_artwork/)

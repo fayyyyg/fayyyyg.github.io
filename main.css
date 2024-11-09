@@ -72,7 +72,7 @@ nav {
   transform: rotate(180deg);
 }
 
-nav a:target {
+nav a:hover {
   text-decoration: underline;
 }
 
@@ -92,51 +92,50 @@ section {
   font-size: 50%;
   flex-direction: column;
   order: 3;
-}
 
-#about>* {
-  color: rgb(10, 10, 10);
-  padding: 1.5rem;
-  max-width: 83ch;
-}
+  >* {
+    color: rgb(10, 10, 10);
+    padding: 1.5rem;
+    max-width: 83ch;
+  }
 
-#about a {
-  color: rgb(10, 10, 10);
-}
+  a {
+    color: rgb(10, 10, 10);
+  }
 
-#works {
-  flex-direction: column;
-
-  figure {
-    padding: 0;
-    box-sizing: border-box;
-    max-height: 100vh;
-    display: flex;
+  #works {
     flex-direction: column;
-    padding: 1rem 0;
-    scroll-snap-align: start;
-    justify-content: start;
-    align-items: flex-start;
-  }
+    overflow: hidden;
 
-  picture {
-    display: contents;
-  }
+    figure {
+      box-sizing: border-box;
+      max-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 0;
+      scroll-snap-align: start;
+      justify-content: start;
+      align-items: flex-start;
+    }
 
-  figcaption {
-    height: 0;
-    transform: translateY(-2rem);
-    font-size: 50%;
-  }
+    picture {
+      display: contents;
+    }
 
-  figcaption ul {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
-  }
+    figcaption {
+      height: 0;
+      transform: translateY(-2rem);
+      font-size: 50%;
+    }
 
-  img {
-    max-height: 100%;
-    max-width: 100%;
+    figcaption ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
   }
-}
