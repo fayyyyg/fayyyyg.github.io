@@ -25,3 +25,6 @@ emotions that may dissolve into nothingness. In my work, I strive to balance the
 visual beauty with the acknowledgment of its inherent fragility. Beauty can be compelling, but
 it can also be empty. This paradox is what drives me to create and what I find most compelling
 to express through my art.
+
+
+[instagram](https://www.instagram.com/fay_yifeigao_artwork/)
