@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" style="background: rgb(10,10,10)">
+
+<head>
+  <title>Yifei 🌻 Gao</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fay Gao - website For artworks">
+  <link rel="prefetch" href="images.json">
+  <link rel="stylesheet" href="main.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', renderPreloadedData)
+
+    function renderPreloadedData(event) {
+      console.log(event)
+      document.querySelectorAll('link[rel="prefetch"]').forEach(link => {
+        const url = new URL(link.getAttribute('href'), window.location)
+        const id = link.getAttribute('href').split('.')[0]
+        fetch(url).then(res => res.json()).then(data => {
+          data.map(entry => renderTemplate(id, entry))
+            .map(el => window[id].parentElement.insertBefore(el, window[id]))
+        })
+      })
+    }
+
+    function renderTemplate(id, data) {
+      const el = window[id].content.cloneNode(true)
+      for (const key in data) {
+        el.querySelectorAll(`[data-${key}]`).forEach(node => {
+          node.setAttribute(node.dataset[key], id + '/' + data[key])
+          console.log(node)
+        })
+      }
+      return el
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>Yifei Gao</h1>
+  </header>
+  <nav>
+    <a href="#works">Works</a>
+    <a href="#about">About</a>
+  </nav>
+  <main>
+    <section id="works">
+      <template id="images">
+        <picture>
+          <img data-filename="src" loading="lazy" />
+        </picture>
+      </template>
+      </swiper-container>
+    </section>
+    <section id="about">
+      <article>
+        <img src="./resume.svg" style="width: 100%; max-height: 100vh;" />
+      </article>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>
