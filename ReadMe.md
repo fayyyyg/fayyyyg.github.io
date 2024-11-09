@@ -6,5 +6,4 @@ A website demonstrating technical prowess on a variety of canvases.
 
 To add images, one uploads (preferably avif formatted picture file) to the `images` directory, and update the `images.json` file with another entry. 
 
-The About section has some further work/discussion for optimal publishing workflow to be worked out.
-
+The About has page can be modified in the `about.md` in the markdown syntax.

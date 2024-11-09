@@ -8,7 +8,6 @@
 html {
   scroll-snap-type: y mandatory;
   background: rgb(10, 10, 10);
-
 }
 
 body {
@@ -73,11 +72,11 @@ nav {
   transform: rotate(180deg);
 }
 
-a:target {
+nav a:target {
   text-decoration: underline;
 }
 
-a {
+nav a {
   color: white;
   text-decoration: none;
 }
@@ -88,24 +87,35 @@ section {
 }
 
 #about {
+  overflow: hidden;
   background: white;
+  font-size: 50%;
+  flex-direction: column;
   order: 3;
+}
+
+#about>* {
+  color: rgb(10, 10, 10);
+  padding: 1.5rem;
+  max-width: 83ch;
+}
+
+#about a {
+  color: rgb(10, 10, 10);
 }
 
 #works {
   flex-direction: column;
-  justify-content: start;
 }
 
 #works picture {
   max-height: 100svh;
   box-sizing: border-box;
   padding: 1rem 0;
-  list-style: none;
   scroll-snap-align: start;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 
 #works img {
