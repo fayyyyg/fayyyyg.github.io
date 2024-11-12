@@ -1,4 +1,4 @@
- ### Bio
+### Bio
 
 Yifei Gao is an acclaimed painter and mixed media artist, hailing from Hunan Changsha, China before settling in California. Currently enrolled in the prestigious Bachelor of Fine Arts program at the School of the Art Institute of Chicago (SAIC), she has been awarded the Merit Scholarship. Her artwork has been exhibited in renowned galleries such as Artbash, SAIC, 202G, and Valley Gallery, Chicago, 202G. Gao's distinctive style fuses a meticulous focus on technical artistry with an emotional detachment that reflects her profound interest in the artificial and unnatural.
 
