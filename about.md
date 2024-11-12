@@ -10,7 +10,7 @@ However, beyond the beauty, there is a persistent sense of emptiness that permea
 
 
 ### Contect
-Email: faygao1121@gmailcom
+Email: faygao1121@gmail.com
 
 ### Links
 [instagram](https://www.instagram.com/fay_yifeigao_artwork/)
