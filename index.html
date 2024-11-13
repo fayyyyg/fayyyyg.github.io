@@ -11,21 +11,6 @@
   <script type="module">
     import snarkdown from "https://cdn.jsdelivr.net/npm/snarkdown@2.0.0/dist/snarkdown.es.js"
     document.addEventListener('DOMContentLoaded', renderPreloadedData)
-    /* 
-    // Could use this technique for getting the image list later removing any need for a json file
-    const octokit = new Octokit({
-      auth: 'YOUR-TOKEN'
-    })
-
-    await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
-      owner: 'OWNER',
-      repo: 'REPO',
-      path: 'PATH',
-      headers: {
-        'X-GitHub-Api-Version': '2022-11-28'
-      }
-    })
-    */
     function renderPreloadedData(event) {
       console.log(event)
       document.querySelectorAll('link[rel="prefetch"]').forEach(link => {
@@ -73,7 +58,8 @@
       <template id="images">
         <figure>
           <picture>
-            <img data-filename="src" loading="lazy" data-title="alt" />
+            <img data-filename="src" style="padding-top:100%;" onload="this.style['padding-top'] = 0; opacity: 1;"
+              loading="lazy" data-title="alt" />
           </picture>
           <figcaption>
             <ul>

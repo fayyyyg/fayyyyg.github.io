@@ -147,5 +147,7 @@ section {
   img {
     max-height: 100%;
     max-width: 100%;
+    opacity: 0;
+    transition: 150ms opacity ease-out;
   }
 }
