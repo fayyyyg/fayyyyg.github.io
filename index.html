@@ -12,7 +12,6 @@
     import snarkdown from "https://cdn.jsdelivr.net/npm/snarkdown@2.0.0/dist/snarkdown.es.js"
     document.addEventListener('DOMContentLoaded', renderPreloadedData)
     function renderPreloadedData(event) {
-      console.log(event)
       document.querySelectorAll('link[rel="prefetch"]').forEach(link => {
         const path = link.getAttribute('href')
         const url = new URL(path, window.location)
@@ -58,8 +57,8 @@
       <template id="images">
         <figure>
           <picture>
-            <img data-filename="src" style="padding-top:100%;" onload="this.style['padding-top'] = 0; opacity: 1;"
-              loading="lazy" data-title="alt" />
+            <img data-filename="src" style="padding-top:100%;"
+              onload="this.style.paddingTop = 0; this.style.opacity = 1;" loading="lazy" data-title="alt" />
           </picture>
           <figcaption>
             <ul>
