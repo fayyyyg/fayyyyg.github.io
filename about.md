@@ -12,17 +12,10 @@ Beyond the beauty lies a pervasive sense of emptiness within her work. This tens
 - School of Art Institute of Chicago, Bachelor’s Degree, Graduating in 2026
 
 ### Group Exhibitions
-- School of Art Institute of Chicago Artbash Open Call 2024
+- 2024 School of Art Institute of Chicago Artbash,Chicago,IL
 
 ### Collections
-- 2024: A work collected by my childhood friend Yudan Peng
-- 2024: A work collected by my childhood friend Zongzhe Li
-- 2023: Two works collected by a friend’s boyfriend of my mother (name not remembered maybe Paul).
-- 2023: A work collected by my friend Angelina Li
-- 2023: A work collected by my step aunt Mirna Del Real
-- 2022: A work collected by my grandmother Muling Zhou
-- 2022: A work collected by my Mother Guangli Li
-- 2021: A work collected by my friend Karl Shen
+- work in privit collection in China and The US
 
 ### Contact
 [Email](mailto:faygao1121@gmail.com)
