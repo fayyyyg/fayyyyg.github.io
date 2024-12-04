@@ -15,7 +15,7 @@ Beyond the beauty lies a pervasive sense of emptiness within her work. This tens
 - 2024 School of Art Institute of Chicago Artbash,Chicago,IL
 
 ### Collections
-- work in privit collection in China and The US
+- Work in private collection in China and The US
 
 ### Contact
 [Email](mailto:faygao1121@gmail.com)
