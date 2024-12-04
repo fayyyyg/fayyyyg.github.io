@@ -110,6 +110,7 @@ section {
 #works {
   flex-direction: column;
   justify-content: flex-start;
+  gap: 1rem;
 
   figure {
     box-sizing: border-box;
