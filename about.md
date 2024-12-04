@@ -9,7 +9,7 @@ Yifei Gao's artistic oeuvre primarily consists of 2D images crafted using mixed 
 Beyond the beauty lies a pervasive sense of emptiness within her work. This tension between visual allure and the void beneath reflects an exploration into nihilism – the concept that everything is transient and fleeting. The vibrant colors, while captivating, are ultimately a veneer concealing emotions that may dissolve into nothingness. In her art, Gao endeavors to reconcile the allure of visual beauty with an acknowledgment of its inherent ephemerality. Beauty can be compelling, but it can also be empty. This paradox is at the heart of her creative process and defines the core of her artistic expression.
 
 ### Education
-- School of Art Institute of Chicago, Bachelor’s Degree, Graduating in 2026
+- School of Art Institute of Chicago, Bachelors Degree, Examining 2026
 
 ### Group Exhibitions
 - 2024 School of Art Institute of Chicago Artbash,Chicago,IL
