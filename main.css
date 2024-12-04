@@ -30,7 +30,6 @@ main>section {
   transition: flex-basis 200ms ease-in-out;
 }
 
-
 main>section:target {
   flex-basis: 100%;
   max-height: none;
@@ -47,6 +46,23 @@ main>section:has(~ [id]:target) {
   overflow: hidden;
 }
 
+@keyframes scrollYfade {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
 
 header,
 nav {
@@ -110,9 +126,13 @@ section {
 #works {
   flex-direction: column;
   justify-content: flex-start;
-  gap: 1rem;
+  gap: 0.2rem;
 
   figure {
+    scroll-timeline: --fade y;
+    scroll-timeline: --fade vertical;
+    animation: scrollYfade 1ms linear;
+    animation-timeline: view(y);
     box-sizing: border-box;
     height: max-content;
     max-height: 100svh;
@@ -147,8 +167,8 @@ section {
 
   img {
     max-height: 100%;
+    padding-top: 100%;
     max-width: 100%;
-    opacity: 0;
     transition: 150ms opacity ease-out;
   }
 }
