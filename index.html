@@ -58,8 +58,7 @@
       <template id="images">
         <figure>
           <picture>
-            <img data-filename="src" loading="lazy" onload="this.style.opacity = 1; this.style.paddingTop = 0;"
-              style="opacity: 0" data-title="alt" />
+            <img data-filename="src" loading="lazy" onload="this.removeAttribute('style')" style="opacity: 0; padding-top: 100%" data-title="alt" />
           </picture>
           <figcaption>
             <ul>
