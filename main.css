@@ -26,6 +26,7 @@ main {
 
 main>section {
   flex-basis: 0%;
+  opacity: 1;
   max-height: 100vh;
   transition: flex-basis 200ms ease-in-out;
 }
@@ -42,6 +43,7 @@ main>section:first-child {
 
 main>section:has(~ [id]:target) {
   flex-basis: 0%;
+  opacity: 0;
   max-height: none;
   overflow: hidden;
 }
@@ -127,7 +129,8 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   gap: .75rem;
-
+  transition: opacity 100ms ease-out, flex-basis 200ms ease-in-out;
+  transition-delay: 0, 100ms;
   figure {
     scroll-timeline: --fade y;
     scroll-timeline: --fade vertical;
