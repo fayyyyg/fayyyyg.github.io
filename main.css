@@ -26,19 +26,27 @@ main {
 
 main>section {
   flex-basis: 0%;
-  opacity: 1;
+  opacity: 0;
   max-height: 100vh;
   transition: flex-basis 200ms ease-in-out;
+  transition-property: opacity, flex-basis;
+  transition-function: ease-out, ease-in-out;
+  transition-duration: 150ms;
+  transition-delay: 0, 150ms;
 }
 
 main>section:target {
   flex-basis: 100%;
+  opacity: 1;
   max-height: none;
+  transition-delay: 150ms, 0;
 }
 
 main>section:first-child {
   flex-basis: 100%;
+  opacity: 1;
   max-height: none;
+  transition-delay: 150ms, 0;
 }
 
 main>section:has(~ [id]:target) {
@@ -46,6 +54,7 @@ main>section:has(~ [id]:target) {
   opacity: 0;
   max-height: none;
   overflow: hidden;
+  transition-delay: 0, 150ms;
 }
 
 @keyframes scrollYfade {
@@ -129,8 +138,6 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   gap: .75rem;
-  transition: opacity 100ms ease-out, flex-basis 200ms ease-in-out;
-  transition-delay: 0, 100ms;
   figure {
     scroll-timeline: --fade y;
     scroll-timeline: --fade vertical;
