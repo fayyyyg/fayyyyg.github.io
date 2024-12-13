@@ -28,30 +28,34 @@ main>section {
   flex-basis: 0%;
   opacity: 0;
   max-height: 100vh;
-  transition-property: opacity, flex-basis;
-  transition-timing-function: ease-out, ease-in-out;
-  transition-duration: 150ms, 150ms;
-  transition-delay: 0, 150ms;
+  visibility: visible;
+  transition-property: opacity, flex-basis, max-height visibility;
+  transition-timing-function: ease-out, ease-in-out, step-end, step-end;
+  transition-duration: 150ms, 150ms, 300ms, 300ms;
+  transition-delay: 0, 150ms, 0, 0;
 }
 
 main>section:target {
   flex-basis: 100%;
   opacity: 1;
+  visibilty: visible;
   max-height: none;
-  transition-delay: 150ms, 0;
+  transition-delay: 150ms, 0, 0 ;
 }
 
 main>section:first-child {
   flex-basis: 100%;
   opacity: 1;
+  visibilty: visible;
   max-height: none;
-  transition-delay: 150ms, 0;
+  transition-delay: 150ms, 0, 0;
 }
 
 main>section:has(~ [id]:target) {
   flex-basis: 0%;
   opacity: 0;
   max-height: none;
+  visibilty: hidden;
   overflow: hidden;
   transition-delay: 0, 150ms;
 }
