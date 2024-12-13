@@ -28,10 +28,9 @@ main>section {
   flex-basis: 0%;
   opacity: 0;
   max-height: 100vh;
-  transition: flex-basis 200ms ease-in-out;
   transition-property: opacity, flex-basis;
-  transition-function: ease-out, ease-in-out;
-  transition-duration: 150ms;
+  transition-timing-function: ease-out, ease-in-out;
+  transition-duration: 150ms, 150ms;
   transition-delay: 0, 150ms;
 }
 
