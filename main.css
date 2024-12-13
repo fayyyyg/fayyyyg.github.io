@@ -14,6 +14,7 @@ body {
   margin: 0;
   color: white;
   max-width: 100vw;
+  width: 100vw;
   gap: 1.5rem;
   display: flex;
   justify-content: stretch;
@@ -25,23 +26,22 @@ main {
 }
 
 main>section {
-  flex-basis: 0%;
+  flex-basis: 0;
   opacity: 0;
   max-height: 100vh;
-  visibility: visible;
   transition-property: opacity, flex-basis, max-height, visibility;
-  transition-timing-function: ease-out, ease-in-out, step-start, step-start;
+  transition-behavior: allow-discrete;
+  transition-timing-function: ease-out, linear, step-end, step-end;
   transition-duration: 150ms, 150ms, 300ms, 150ms;
-  transition-delay: 0, 150ms, 0, 0;
+  transition-delay: 150ms, 0ms, 0, 0;
 }
 
 main>section:target {
   flex-basis: 100%;
   opacity: 1;
   visibilty: visible;
-
   max-height: none;
-  transition-delay: 150ms, 0, 0, 0, 0;
+  transition-delay: 0, 150ms, 0, 0;
 }
 
 main>section:first-child {
@@ -49,16 +49,14 @@ main>section:first-child {
   opacity: 1;
   visibilty: visible;
   max-height: none;
-  transition-delay: 150ms, 0, 0, 0, 0;
 }
 
 main>section:has(~ [id]:target) {
-  flex-basis: 0%;
+  flex-basis: 0;
   opacity: 0;
   max-height: none;
-  overflow: hidden;
-  transition-timing-function: ease-out, ease-in-out, step-end, step-end;
-  transition-delay: 150ms, 0, 0, 0, 0;}
+  visibility: hidden;
+  overflow: hidden; 
 }
 
 @keyframes scrollYfade {
@@ -83,7 +81,7 @@ header,
 nav {
   box-sizing: border-box;
   writing-mode: vertical-rl;
-  max-height: 100svh;
+  max-height: 100svh 100vh;
   margin: 0;
   padding: 1.25rem 0;
   position: sticky;
