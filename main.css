@@ -81,7 +81,7 @@ header,
 nav {
   box-sizing: border-box;
   writing-mode: vertical-rl;
-  max-height: 100svh 100vh;
+  max-height: 100svh;
   margin: 0;
   padding: 1.25rem 0;
   position: sticky;
