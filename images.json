@@ -8,7 +8,7 @@
   },
   {
     "filename": "IMG_0103.avif",
-    "title": "拖影影影",
+    "title": "拖影影影影",
     "date": "2024-11",
     "dimention": "24x30",
     "medium": "Mixed medium"
@@ -42,6 +42,48 @@
     "medium": "Mixed medium"
   },
   {
+    "filename": "71011B31-240B-4972-BED2-269AFF71952F.jpg.avif",
+    "title": "Reflect",
+    "date": "2024-09",
+    "dimention": "16x20",
+    "medium": "Oil on Canvas"
+  },
+  {
+    "filename": "85EF2C43-77C1-4651-91BC-63A4B2D7FE40.jpg.avif",
+    "title": "Green Person",
+    "date": "2024-05",
+    "dimention": "34x40",
+    "medium": "Mixed medium"
+  },
+  {
+    "filename": "34928744-AB27-4FC5-8402-02FB1723AC7C.jpg.avif",
+    "title": "Drop(漏）",
+    "date": "2024-05",
+    "dimention": "18x24",
+    "medium": "Mixed medium"
+  },
+  {
+    "filename": "34CB0B76-18BF-44A8-A13C-7DD9C8684643.jpg.avif",
+    "title": "2023.7.8",
+    "date": "2024-07",
+    "dimention": "24x30",
+    "medium": "Mixed medium"
+  },
+  {
+    "filename": "6B4D59A9-D926-49FA-A8D3-715604B38C01.jpg.avif",
+    "title": "Wall",
+    "date": "2023-10",
+    "dimention": "16x20",
+    "medium": "Airbrush on Watercolor paper"
+  },
+  {
+    "filename": "lantianbaiyun.jpg.avif",
+    "title": "Cab",
+    "date": "2023-12",
+    "dimention": "16x20",
+    "medium": "Mixed medium"
+  }
+  {
     "filename": "9A4467A9-EF3B-435F-9CCE-0F27D8DC2ECC.jpg.avif",
     "title": "Beautiful world 2",
     "date": "2024-10",
@@ -55,46 +97,4 @@
     "dimention": "9x12",
     "medium": "Oil on Watercolor paper"
   },
-  {
-    "filename": "85EF2C43-77C1-4651-91BC-63A4B2D7FE40.jpg.avif",
-    "title": "Green Person",
-    "date": "2024-05",
-    "dimention": "34x40",
-    "medium": "Mixed medium"
-  },
-  {
-    "filename": "71011B31-240B-4972-BED2-269AFF71952F.jpg.avif",
-    "title": "Reflect",
-    "date": "2024-09",
-    "dimention": "16x20",
-    "medium": "Oil on Canvas"
-  },
-  {
-    "filename": "6B4D59A9-D926-49FA-A8D3-715604B38C01.jpg.avif",
-    "title": "Wall",
-    "date": "2023-10",
-    "dimention": "16x20",
-    "medium": "Airbrush on Watercolor paper"
-  },
-  {
-    "filename": "34CB0B76-18BF-44A8-A13C-7DD9C8684643.jpg.avif",
-    "title": "2023.7.8",
-    "date": "2024-07",
-    "dimention": "24x30",
-    "medium": "Mixed medium"
-  },
-  {
-    "filename": "34928744-AB27-4FC5-8402-02FB1723AC7C.jpg.avif",
-    "title": "Drop(漏）",
-    "date": "2024-05",
-    "dimention": "18x24",
-    "medium": "Mixed medium"
-  },
-  {
-    "filename": "lantianbaiyun.jpg.avif",
-    "title": "Cab",
-    "date": "2023-12",
-    "dimention": "16x20",
-    "medium": "Mixed medium"
-  }
 ]
