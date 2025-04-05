@@ -56,7 +56,7 @@ main>section:has(~ [id]:target) {
   opacity: 0;
   max-height: none;
   visibility: hidden;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 @keyframes scrollYfade {
@@ -140,6 +140,7 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   gap: .75rem;
+
   figure {
     scroll-timeline: --fade y;
     scroll-timeline: --fade vertical;
@@ -169,6 +170,7 @@ section {
   }
 
   figcaption ul {
+    text-shadow: rgb(10, 10, 10) 0 0 .5rem, rgb(10, 10, 10) 0 0 .1rem;
     display: flex;
     padding: 1rem;
     transform: translateY(-100%);
