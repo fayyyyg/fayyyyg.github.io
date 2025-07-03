@@ -177,6 +177,9 @@ section {
     align-items: flex-end;
     list-style: none;
     gap: 1rem;
+    li:empty {
+      display: none;
+    }
   }
 
   img {
