@@ -11,7 +11,7 @@
 Sorry, I’m joking. What I really mean is:
 
 Here’s my logic. I’m a visual artist. I’m reality-oriented and result-driven. I think there are only two legitimate functions of painting:
-	1.	To help the artist release emotions. what professionals call “splitting-based compensation.” 2.	Decoration.
+1.To help the artist release emotions. what professionals call “splitting-based compensation.” 2.Decoration.
 
 I don’t believe in the idea that “art should be critical” or “art should change the world”at least not when it comes to visual artists. From a result-oriented point of view, if someone’s goal is to change the world, becoming a visual artist is probably the least efficient way to do that.
 
