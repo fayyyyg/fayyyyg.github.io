@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>System</title>
+
+<style>
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.text {
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+}
+
+.cn {
+  font-family: "STFangsong", "FangSong", serif;
+}
+
+.en {
+  font-family: "Courier New", monospace;
+  opacity: 0.9;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 12px;
+  font-family: "Courier New", monospace;
+  cursor: pointer;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background: white;
+  color: black;
+}
+
+#imageContainer {
+  margin-top: 40px;
+  opacity: 0;
+  transition: opacity 4s;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  max-width: 80vw;
+  max-height: 70vh;
+}
+
+#saveBtn {
+  display: none;
+  margin-top: 20px;
+}
+
+#loading {
+  display: none;
+  font-size: 13px;
+  font-family: "Courier New", monospace;
+  margin-top: 20px;
+  animation: breathe 1.5s infinite;
+  opacity: 0.7;
+}
+
+#errorText {
+  display: none;
+  font-size: 12px;
+  font-family: "Courier New", monospace;
+  margin-top: 20px;
+  opacity: 0.7;
+  max-width: 520px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+@keyframes breathe {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+#sideText {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 260px;
+  font-size: 10px;
+  line-height: 1.6;
+  opacity: 0.5;
+  pointer-events: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="text" id="topText">
+  <div class="cn">生成高逸菲风格的图片</div>
+  <div class="en">Generate in yifeigao's style</div>
+</div>
+
+<button id="btn">Generate</button>
+
+<div id="loading">Generating...</div>
+<div id="errorText"></div>
+
+<div id="imageContainer">
+  <img id="result" src="">
+</div>
+
+<button id="saveBtn">Save Image</button>
+
+<div id="sideText"></div>
+
+<audio id="audio" src="sound.mp3"></audio>
+
+<script>
+
+// ===== 图片列表（自己准备好）=====
+const images = [];
+for (let i = 1; i <= 100; i++) {
+  images.push(`images/gen_${i}.jpg`);
+}
+
+let currentIndex = 0;
+let isGenerating = false;
+
+// ===== 侧边滚动文字 =====
+const lines = [
+  { cn: "感谢诗人三聋子", en: "Thanks to the poet San Longzi" },
+  { cn: "让我用他的诗《无归即归记》作为加载音效。", en: "for allowing me to use his poem 'Wu Gui Ji Gui Ji' as the loading audio." },
+  { cn: "如果想要将生成出来的图片在现实生活中画出来，", en: "If you would like to have the generated image painted in real life," },
+  { cn: "可以 email 3033704442@qq.com", en: "you can email 3033704442@qq.com" },
+  { cn: "她提供把生成出来的图片画出来并寄给你的服务，", en: "She offers a service to recreate the generated image as a physical painting and ship it to you." },
+  { cn: "她是中国人，请跟她讲中文。", en: "She is Chinese. Please communicate with her in Chinese." },
+  { cn: "你们之间的任何经济纠葛", en: "Any financial matters between you and her" },
+  { cn: "与本网站和艺术家无关。", en: "are not related to this website or the artist." },
+  { cn: "请不要不停点击，这会消耗资源", en: "Please do not repeatedly click this system." },
+];
+
+const sideText = document.getElementById("sideText");
+
+function typeLines(index = 0) {
+  if (index >= lines.length) return;
+
+  const pair = lines[index];
+
+  const cnLine = document.createElement("div");
+  cnLine.className = "cn";
+  cnLine.textContent = pair.cn;
+  sideText.appendChild(cnLine);
+
+  const enLine = document.createElement("div");
+  enLine.className = "en";
+  enLine.textContent = pair.en;
+  sideText.appendChild(enLine);
+
+  setTimeout(() => typeLines(index + 1), 900);
+}
+
+// ===== 核心生成逻辑 =====
+const btn = document.getElementById("btn");
+const img = document.getElementById("result");
+const imgContainer = document.getElementById("imageContainer");
+const loading = document.getElementById("loading");
+const errorText = document.getElementById("errorText");
+const saveBtn = document.getElementById("saveBtn");
+const audio = document.getElementById("audio");
+const topText = document.getElementById("topText");
+
+btn.onclick = () => {
+
+  if (isGenerating) return;
+
+  if (currentIndex >= images.length) {
+    errorText.style.display = "block";
+    errorText.textContent = "System exhausted.";
+    return;
+  }
+
+  isGenerating = true;
+
+  btn.style.display = "none";
+  topText.style.display = "none";
+  loading.style.display = "block";
+  errorText.style.display = "none";
+  imgContainer.style.opacity = 0;
+  saveBtn.style.display = "none";
+
+  audio.play();
+
+  setTimeout(() => {
+
+    img.src = images[currentIndex];
+
+    img.onload = () => {
+      loading.style.display = "none";
+      imgContainer.style.opacity = 1;
+      saveBtn.style.display = "block";
+
+      if (sideText.innerHTML.trim() === "") {
+        typeLines();
+      }
+    };
+
+    currentIndex++;
+    isGenerating = false;
+
+    btn.style.display = "block";
+
+  }, 20000);
+};
+
+// ===== 保存 =====
+saveBtn.onclick = () => {
+  const link = document.createElement("a");
+  link.href = img.src;
+  link.download = "yifeigao_image.jpg";
+  link.click();
+};
+
+</script>
+
+</body>
+</html>
