@@ -115,6 +115,7 @@ nav a {
   font-family: "Courier New", monospace;
   letter-spacing: 1px;
   opacity: 0.8;
+  font-weight: 600;
 }
 
 section {
