@@ -237,7 +237,58 @@ btn.onclick = () => {
 
   setTimeout(() => {
 
-    img.src = images[currentIndex];
+setTimeout(() => {
+
+  if (currentIndex >= images.length) {
+    document.body.innerHTML = `
+      <div style="
+        background:black;
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        font-family:Courier New, monospace;
+        text-align:center;
+      ">
+        <div style="
+          color:red;
+          font-size:32px;
+          margin-bottom:20px;
+          letter-spacing:2px;
+        ">
+          OUT OF TOKEN
+        </div>
+
+        <div style="
+          color:red;
+          font-size:14px;
+          opacity:0.8;
+        ">
+          I told you not to keep clicking.
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  img.src = images[currentIndex];
+
+  img.onload = () => {
+    loading.style.display = "none";
+    imgContainer.style.opacity = 1;
+    saveBtn.style.display = "block";
+
+    if (sideText.innerHTML.trim() === "") {
+      typeLines();
+    }
+  };
+
+  currentIndex++;
+  localStorage.setItem("swi_index", currentIndex);
+  isGenerating = false;
+
+}, 20000);
 
     img.onload = () => {
       loading.style.display = "none";
