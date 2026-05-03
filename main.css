@@ -155,7 +155,7 @@ section {
     animation-timeline: view(y);
     box-sizing: border-box;
     height: max-content;
-    max-height: calc(100svh - 2rem);
+    max-height: calc(100vh - 2rem);
     padding: 0;
     display: flex;
     flex-direction: column;
