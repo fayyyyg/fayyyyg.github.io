@@ -75,17 +75,6 @@ img {
   opacity: 0.7;
 }
 
-#errorText {
-  display: none;
-  font-size: 12px;
-  font-family: "Courier New", monospace;
-  margin-top: 20px;
-  opacity: 0.7;
-  max-width: 520px;
-  text-align: center;
-  line-height: 1.6;
-}
-
 @keyframes breathe {
   0% { opacity: 0.2; }
   50% { opacity: 1; }
@@ -115,7 +104,6 @@ img {
 <button id="btn">Generate</button>
 
 <div id="loading">Generating...</div>
-<div id="errorText"></div>
 
 <div id="imageContainer">
   <img id="result" src="">
@@ -129,32 +117,23 @@ img {
 
 <script>
 
-// ===== 图片列表（自己准备好）=====
+// ===== 图片列表 =====
 const images = [];
 for (let i = 1; i <= 100; i++) {
   images.push(`swi_images/gen_${i}.jpeg`);
 }
 
+// ===== 记忆进度 =====
 let currentIndex = localStorage.getItem("swi_index");
+currentIndex = currentIndex === null ? 0 : parseInt(currentIndex);
 
-if (currentIndex === null) {
-  currentIndex = 0;
-} else {
-  currentIndex = parseInt(currentIndex);
-}
 let isGenerating = false;
 
-// ===== 侧边滚动文字 =====
+// ===== 文字 =====
 const lines = [
   { cn: "感谢诗人三聋子", en: "Thanks to the poet San Longzi" },
-  { cn: "让我用他的诗《无归即归记》作为加载音效。", en: "for allowing me to use his poem 'Wu Gui Ji Gui Ji' as the loading audio." },
-  { cn: "如果想要将生成出来的图片在现实生活中画出来，", en: "If you would like to have the generated image painted in real life," },
-  { cn: "可以 email 3033704442@qq.com", en: "you can email 3033704442@qq.com" },
-  { cn: "她提供把生成出来的图片画出来并寄给你的服务，", en: "She offers a service to recreate the generated image as a physical painting and ship it to you." },
-  { cn: "她是中国人，请跟她讲中文。", en: "She is Chinese. Please communicate with her in Chinese." },
-  { cn: "你们之间的任何经济纠葛", en: "Any financial matters between you and her" },
-  { cn: "与本网站和艺术家无关。", en: "are not related to this website or the artist." },
-  { cn: "请不要不停点击，这会消耗资源", en: "Please do not repeatedly click this system." },
+  { cn: "让我用他的诗《无归即归记》作为加载音效。", en: "for allowing me to use his poem as loading audio." },
+  { cn: "请不要不停点击", en: "Please do not repeatedly click this system." },
 ];
 
 const sideText = document.getElementById("sideText");
@@ -162,81 +141,34 @@ const sideText = document.getElementById("sideText");
 function typeLines(index = 0) {
   if (index >= lines.length) return;
 
-  const pair = lines[index];
-
   const cnLine = document.createElement("div");
   cnLine.className = "cn";
-  cnLine.textContent = pair.cn;
+  cnLine.textContent = lines[index].cn;
   sideText.appendChild(cnLine);
 
   const enLine = document.createElement("div");
   enLine.className = "en";
-  enLine.textContent = pair.en;
+  enLine.textContent = lines[index].en;
   sideText.appendChild(enLine);
 
   setTimeout(() => typeLines(index + 1), 900);
 }
 
-// ===== 核心生成逻辑 =====
+// ===== DOM =====
 const btn = document.getElementById("btn");
 const img = document.getElementById("result");
 const imgContainer = document.getElementById("imageContainer");
 const loading = document.getElementById("loading");
-const errorText = document.getElementById("errorText");
 const saveBtn = document.getElementById("saveBtn");
 const audio = document.getElementById("audio");
 const topText = document.getElementById("topText");
 
+// ===== 点击 =====
 btn.onclick = () => {
 
   if (isGenerating) return;
 
-  if (currentIndex >= images.length) {
-  document.body.innerHTML = `
-    <div style="
-      background:black;
-      height:100vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      font-family:Courier New, monospace;
-      text-align:center;
-    ">
-      <div style="
-        color:red;
-        font-size:32px;
-        margin-bottom:20px;
-        letter-spacing:2px;
-      ">
-        OUT OF TOKEN
-      </div>
-
-      <div style="
-        color:red;
-        font-size:14px;
-        opacity:0.8;
-      ">
-        I told you not to keep clicking.
-      </div>
-    </div>
-  `;
-  return;
-}
-
-  isGenerating = true;
-
-  btn.style.display = "none";
-  topText.style.display = "none";
-  loading.style.display = "block";
-  errorText.style.display = "none";
-  imgContainer.style.opacity = 0;
-  saveBtn.style.display = "none";
-
-  audio.play();
-
-  setTimeout(() => {
-
+  // 👉 已耗尽
   if (currentIndex >= images.length) {
     document.body.innerHTML = `
       <div style="
@@ -249,20 +181,10 @@ btn.onclick = () => {
         font-family:Courier New, monospace;
         text-align:center;
       ">
-        <div style="
-          color:red;
-          font-size:32px;
-          margin-bottom:20px;
-          letter-spacing:2px;
-        ">
+        <div style="color:red;font-size:32px;margin-bottom:20px;">
           OUT OF TOKEN
         </div>
-
-        <div style="
-          color:red;
-          font-size:14px;
-          opacity:0.8;
-        ">
+        <div style="color:red;font-size:14px;opacity:0.8;">
           I told you not to keep clicking.
         </div>
       </div>
@@ -270,25 +192,43 @@ btn.onclick = () => {
     return;
   }
 
-  img.src = images[currentIndex];
+  isGenerating = true;
 
-  img.onload = () => {
-    loading.style.display = "none";
-    imgContainer.style.opacity = 1;
-    saveBtn.style.display = "block";
+  btn.style.display = "none";
+  topText.style.display = "none";
+  loading.style.display = "block";
+  imgContainer.style.opacity = 0;
+  saveBtn.style.display = "none";
 
-    if (sideText.innerHTML.trim() === "") {
-      typeLines();
+  audio.play();
+
+  setTimeout(() => {
+
+    // 👉 再检查一次（防止最后一张之后卡住）
+    if (currentIndex >= images.length) {
+      document.body.innerHTML = `
+        <div style="
+          background:black;
+          height:100vh;
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+          align-items:center;
+          font-family:Courier New, monospace;
+          text-align:center;
+        ">
+          <div style="color:red;font-size:32px;margin-bottom:20px;">
+            OUT OF TOKEN
+          </div>
+          <div style="color:red;font-size:14px;opacity:0.8;">
+            I told you not to keep clicking.
+          </div>
+        </div>
+      `;
+      return;
     }
-  };
 
-  currentIndex++;
-  localStorage.setItem("swi_index", currentIndex);
-  isGenerating = false;
-
-}, 20000);
-
-  
+    img.src = images[currentIndex];
 
     img.onload = () => {
       loading.style.display = "none";
@@ -302,6 +242,7 @@ btn.onclick = () => {
 
     currentIndex++;
     localStorage.setItem("swi_index", currentIndex);
+
     isGenerating = false;
 
   }, 20000);
