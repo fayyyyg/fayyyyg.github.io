@@ -195,18 +195,30 @@ btn.onclick = () => {
   document.body.innerHTML = `
     <div style="
       background:black;
-      color:white;
       height:100vh;
       display:flex;
+      flex-direction:column;
       justify-content:center;
       align-items:center;
       font-family:Courier New, monospace;
-      font-size:14px;
       text-align:center;
-      padding:20px;
     ">
-      I told you not to keep clicking.<br>
-      There is nothing left.
+      <div style="
+        color:red;
+        font-size:32px;
+        margin-bottom:20px;
+        letter-spacing:2px;
+      ">
+        OUT OF TOKEN
+      </div>
+
+      <div style="
+        color:red;
+        font-size:14px;
+        opacity:0.8;
+      ">
+        I told you not to keep clicking.
+      </div>
     </div>
   `;
   return;
