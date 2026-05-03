@@ -135,7 +135,13 @@ for (let i = 1; i <= 100; i++) {
   images.push(`swi_images/gen_${i}.jpeg`);
 }
 
-let currentIndex = 0;
+let currentIndex = localStorage.getItem("swi_index");
+
+if (currentIndex === null) {
+  currentIndex = 0;
+} else {
+  currentIndex = parseInt(currentIndex);
+}
 let isGenerating = false;
 
 // ===== 侧边滚动文字 =====
@@ -232,6 +238,7 @@ btn.onclick = () => {
     };
 
     currentIndex++;
+    localStorage.setItem("swi_index", currentIndex);
     isGenerating = false;
 
   }, 20000);
