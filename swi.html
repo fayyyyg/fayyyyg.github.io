@@ -186,10 +186,25 @@ btn.onclick = () => {
   if (isGenerating) return;
 
   if (currentIndex >= images.length) {
-    errorText.style.display = "block";
-    errorText.textContent = "System exhausted.";
-    return;
-  }
+  document.body.innerHTML = `
+    <div style="
+      background:black;
+      color:white;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-family:Courier New, monospace;
+      font-size:14px;
+      text-align:center;
+      padding:20px;
+    ">
+      I told you not to keep clicking.<br>
+      There is nothing left.
+    </div>
+  `;
+  return;
+}
 
   isGenerating = true;
 
