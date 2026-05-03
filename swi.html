@@ -237,8 +237,6 @@ btn.onclick = () => {
 
   setTimeout(() => {
 
-setTimeout(() => {
-
   if (currentIndex >= images.length) {
     document.body.innerHTML = `
       <div style="
@@ -289,6 +287,8 @@ setTimeout(() => {
   isGenerating = false;
 
 }, 20000);
+
+  
 
     img.onload = () => {
       loading.style.display = "none";
