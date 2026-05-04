@@ -127,6 +127,7 @@ img {
 
 // ===== 图片列表 =====
 const images = [];
+const MAX_CLICKS = 3;
 for (let i = 1; i <= 3; i++) {
   images.push(`swi_images/gen_${i}.jpeg`);
 }
@@ -134,12 +135,16 @@ for (let i = 1; i <= 3; i++) {
 // ===== 记忆进度 =====
 let currentIndex = localStorage.getItem("swi_index");
 
+let clickCount = localStorage.getItem("click_count");
+clickCount = clickCount === null ? 0 : parseInt(clickCount);
+
 if (currentIndex === null) {
   currentIndex = Math.floor(Math.random() * images.length);
 } else {
   currentIndex = parseInt(currentIndex);
 }
 let isGenerating = false;
+  
 
 // ===== 文字 =====
 const lines = [
@@ -217,6 +222,28 @@ const topText = document.getElementById("topText");
 btn.onclick = () => {
 
   if (isGenerating) return;
+    if (clickCount >= MAX_CLICKS) {
+    document.body.innerHTML = `
+      <div style="
+        background:black;
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        font-family:Courier New, monospace;
+        text-align:center;
+      ">
+        <div style="color:red;font-size:32px;margin-bottom:20px;">
+          OUT OF TOKEN
+        </div>
+        <div style="color:red;font-size:14px;opacity:0.8;">
+          I told you not to keep clicking.
+        </div>
+      </div>
+    `;
+    return;
+  }
 
   // 👉 已耗尽
   if (currentIndex >= images.length) {
@@ -292,6 +319,9 @@ btn.onclick = () => {
 
     currentIndex++;
     localStorage.setItem("swi_index", currentIndex);
+    
+    clickCount++;
+    localStorage.setItem("click_count", clickCount);
 
     isGenerating = false;
 
