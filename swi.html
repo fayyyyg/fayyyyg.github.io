@@ -133,8 +133,12 @@ for (let i = 1; i <= 3; i++) {
 
 // ===== 记忆进度 =====
 let currentIndex = localStorage.getItem("swi_index");
-currentIndex = currentIndex === null ? 0 : parseInt(currentIndex);
 
+if (currentIndex === null) {
+  currentIndex = Math.floor(Math.random() * images.length);
+} else {
+  currentIndex = parseInt(currentIndex);
+}
 let isGenerating = false;
 
 // ===== 文字 =====
